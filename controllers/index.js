@@ -5,6 +5,7 @@ let btnRemover = document.getElementById("btnRemover");
 
 
 btnAñadir.addEventListener("click",
+//AÑADIR CONTACTO
 function () {
   console.log("A1 si")
   let nombreContacto = document.getElementById('contactName').value;
@@ -19,6 +20,7 @@ function () {
 })
 
 btnRemover.addEventListener("click",
+//ELIMINAR CONTACTO
 function () {
   queue.dequeue();
   actualizarListaContactos();
