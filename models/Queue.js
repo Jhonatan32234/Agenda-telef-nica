@@ -34,6 +34,22 @@ enqueue(data) {
     }
     return data;
   }
+  bubbleSort() {
+    let swapped;
+    do {
+      swapped = false;
+      let current = this.head;
+      while (current && current.next) {
+        if (current.data.name > current.next.data.name) {
+          let temp = current.data;
+          current.data = current.next.data;
+          current.next.data = temp;
+          swapped = true;
+        }
+        current = current.next;
+      }
+    } while (swapped);
+  }
 }
 
 
