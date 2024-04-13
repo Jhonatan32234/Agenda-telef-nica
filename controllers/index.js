@@ -15,6 +15,7 @@ function () {
   }else{
     let contact = {name: nombreContacto, number: numeroContacto};
   queue.enqueue(contact);
+  queue.bubbleSort();
   actualizarListaContactos();
   }
 })
