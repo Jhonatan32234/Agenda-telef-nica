@@ -39,13 +39,22 @@ enqueue(data) {
     do {
       swapped = false;
       let current = this.head;
-      while (current && current.next) {
-        if (current.data.name > current.next.data.name) {
-          let temp = current.data;
-          current.data = current.next.data;
-          current.next.data = temp;
+      let queue = [];
+      while (current) {
+        queue.push(current.data);
+        current = current.next;
+      }
+      for (let i = 0; i < queue.length - 1; i++) {
+        if (queue[i].name > queue[i + 1].name) {
+          let temp = queue[i];
+          queue[i] = queue[i + 1];
+          queue[i + 1] = temp;
           swapped = true;
         }
+      }
+      current = this.head;
+      for (let i = 0; i < queue.length; i++) {
+        current.data = queue[i];
         current = current.next;
       }
     } while (swapped);
